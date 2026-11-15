@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMenu Assist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        h1 { color: #243b64; }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #243b64;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef3ff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SmartMenu Assist</h1>
+        <p>An AI-powered tool for improving restaurant menus.</p>
+
+        <h3>Enter Your Menu Description</h3>
+        <textarea id="menu" placeholder="Describe your food menu here..."></textarea>
+
+        <br><br>
+        <button onclick="analyzeMenu()">Analyze Menu</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function analyzeMenu() {
+            const menu = document.getElementById("menu").value;
+            const result = document.getElementById("result");
+
+            if (menu.trim() === "") {
+                result.innerHTML = "Please enter your menu description.";
+                return;
+            }
+
+            result.innerHTML =
+                "<h3>Menu Improvement Suggestions</h3>" +
+                "<p>Make your menu descriptions clear and attractive.</p>" +
+                "<p>Highlight the unique ingredients and features of your food.</p>" +
+                "<p>Use appealing and easy-to-understand descriptions.</p>";
+        }
+    </script>
+</body>
+</html>
